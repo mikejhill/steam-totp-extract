@@ -60,10 +60,10 @@ jobs:
       - run: uv python install ${{ matrix.python-version }}
       - run: uv sync --group dev --python ${{ matrix.python-version }}
       - name: Run tests
-        run: uv run pytest --junit-xml=test-results.xml
+        run: uv run pytest -v --junit-xml=test-results.xml
       - name: Publish test report
         if: always()
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v3
         with:
           name: "Tests (${{ matrix.os }}, Python ${{ matrix.python-version }})"
           path: test-results.xml
