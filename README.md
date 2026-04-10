@@ -16,9 +16,9 @@ directly.
 
 ## Prerequisites
 
-- **Python 3.12+**
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/)** —
-  Python package manager
+  Python package manager (automatically downloads the required Python
+  version; no manual Python install needed)
 - **Your Steam account credentials** (username and password)
 - **Your current Steam Guard revocation code** (starts with `R`,
   e.g. `R12345`) — this is shown when you first set up Steam Guard
