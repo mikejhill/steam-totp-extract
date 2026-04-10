@@ -1,0 +1,13 @@
+{
+  // markdownlint-cli2 configuration
+  // https://github.com/DavidAnson/markdownlint-cli2
+  "config": {
+    "MD013": {
+      // Allow longer lines in code blocks and tables
+      "line_length": 80,
+      "code_blocks": false,
+      "tables": false
+    }
+  },
+  "ignores": [".venv/**"]
+}

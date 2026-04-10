@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "steam-totp-extract"
+version = "0.1.0"
+description = "Extract Steam Guard TOTP secret for Bitwarden import."
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.31",
+    "rsa>=4.9",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.7",
+    "ty>=0.0.1",
+]
+
+[project.scripts]
+steam-totp-extract = "steam_totp_extract.__main__:main"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "UP", "B", "SIM", "RUF", "D", "ANN", "PT", "RET", "ARG", "FA"]
+ignore = ["D100", "D104", "D107"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["steam_totp_extract"]
+
+[tool.ty.environment]
+python-version = "3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
